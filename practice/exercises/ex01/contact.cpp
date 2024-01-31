@@ -23,7 +23,7 @@ std::string	Contact::get_phone_num() const
 {
 	return (this->_phone_num);
 }
-std::string	Contact::get_darckest_secret() const
+std::string	Contact::get_darkest_secret() const
 {
 	return (this->_darkest_secret);
 }

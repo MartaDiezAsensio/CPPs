@@ -81,7 +81,7 @@ void	PhoneBook::add_contact()
 		flag = 0;
 		std::cout << "Darkest Secret> ";
 		getline(std::cin, darkest_secret);
-		if (darkest.empty())
+		if (darkest_secret.empty())
 			std::cout << "INVALID INPUT: please enter non empty string" << std::endl;
 		if (_contacts[_index % 8].set_darkest_secret(darkest_secret) == 1)
 		{
@@ -112,28 +112,29 @@ void	PhoneBook::search_contact()
 		std::cout << "Invalid input" << std::endl;
 	else
 	{
-		std::cout << "First nam: " << _contacts[index_sarch].get_first_name() << std::endl;
+		std::cout << "First nam: " << _contacts[index_search].get_first_name() << std::endl;
 		std::cout << "Last name: " << _contacts[index_search].get_last_name() << std::endl;
-		std::cout << "nickename: " << _contacts[index_search].get_nickename() << std::endl;
+		std::cout << "nickename: " << _contacts[index_search].get_nick() << std::endl;
 		std::cout << "Phone number: " << _contacts[index_search].get_phone_num() << std::endl;
 		std::cout << "Darkest secret: " << _contacts[index_search].get_darkest_secret() << std::endl;
 	}
 	std::cin.clear();
-	stc::cin.ignore(1000, '\n');
+	std::cin.ignore(1000, '\n');
 }
 
-void	PhoneBook::display_contact() const
+void	PhoneBook::display_contact()
 {
 	std::cout	<< "|--------------Contact Display--------------|\n"
 				<< "|-------------------------------------------|\n"
 				<< "|     Index|First Name| Last Name|  Nickname|\n"
 				<< "|-------------------------------------------|\n";
-	for (int i = 0; i < 8: i++)
+
+	for (int i = 0; i < 8; i++)
 	{
 		std::cout << '|' << std::setw(10) << i;
 		std::cout << '|' << std::setw(10) << _contacts[i].get_first_name();
 		std::cout << '|' << std::setw(10) << _contacts[i].get_last_name();
-		std::cout << '|' << std::setw(10) << _contacts[i].get_nickename();
+		std::cout << '|' << std::setw(10) << _contacts[i].get_nick();
 		std::cout << '|' << std::endl;
 	}
 }
@@ -149,17 +150,18 @@ void	PhoneBook::help_menu()
 
 int	main()
 {
-	PhoneBook	myPhoneBook();
+	PhoneBook	*myPhoneBook = new PhoneBook();
 
 	std::string	str;
-	myPhoneBook.help_menu();
-	std:;cout << "> ";
+
+	myPhoneBook->help_menu();
+	std::cout << "> ";
 	while (getline(std::cin, str))
 	{
 		if (str.compare("ADD") == 0)
-			myPhoneBook.add_contact();
+			myPhoneBook->add_contact();
 		else if (str.compare("SEARCH") == 0)
-			myPhoneBook.search_contact();
+			myPhoneBook->search_contact();
 		else if (str.compare("EXIT") == 0)
 			break ;
 		else
