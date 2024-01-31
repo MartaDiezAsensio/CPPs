@@ -19,7 +19,7 @@ std::string	Contact::get_nick() const
 {
 	return (this->_nick);
 }
-std::string	Contact::get_phone_number() const
+std::string	Contact::get_phone_num() const
 {
 	return (this->_phone_num);
 }
@@ -79,7 +79,7 @@ int	Contact::set_nick(std::string nick)
 	_nick = nick;
 	return (0);
 }
-int	Contact::set_phone_number(std::string phone_num)
+int	Contact::set_phone_num(std::string phone_num)
 {
 	if (phone_num == "")
 		return (1);
