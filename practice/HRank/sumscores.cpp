@@ -18,8 +18,7 @@ class Student {
 			int			scores[arrSize];
 
 			for (int i = 0; i < arrSize; i++) {
-				cout << "Enter score: " << i << ": ";
-				cin >> scores[i];
+				cin >> this->scores[i];
 			}
 		}
 		int calculateTotalScore() {
@@ -28,7 +27,8 @@ class Student {
 
             for (i = 0; i < 5; i++) {
                 sum += scores[i];
-            } 
+            }
+			return (sum);
         }
 };
 
