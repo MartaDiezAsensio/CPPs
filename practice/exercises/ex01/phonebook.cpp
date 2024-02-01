@@ -47,7 +47,6 @@ void	PhoneBook::add_contact()
 			flag = 1;
 		}
 	}
-
 	while (std::cin.good() && (nick.empty() || flag == 1))
 	{
 		flag = 0;
