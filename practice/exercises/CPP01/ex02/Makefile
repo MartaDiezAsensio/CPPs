@@ -1,5 +1,5 @@
 
-SRC = main.cpp Zombie.cpp ZombieHorde.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -9,7 +9,7 @@ RM = rm -f
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = zombie
+NAME = hi
 
 all: $(NAME)
 

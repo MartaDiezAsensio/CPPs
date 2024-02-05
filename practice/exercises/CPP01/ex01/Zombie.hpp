@@ -1,16 +1,19 @@
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
+# include <algorithm>
 
 class Zombie {
 	private:
 		std::string	_name;
 	public:
-		Zombie( std::string const &name );
+		Zombie( std::string name );
+		Zombie( void );
 		~Zombie( void );
 		void	announce( void );
+		void	setName(std::string name);
 };
 
 Zombie*	zombieHorde( int N, std::string name );
