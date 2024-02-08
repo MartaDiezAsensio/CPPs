@@ -3,7 +3,7 @@ SRC = main.cpp Zombie.cpp ZombieHorde.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = clang++
+CC = g++
 
 RM = rm -f
 
