@@ -113,6 +113,30 @@ const Fixed	&Fixed::max(Fixed const &first, Fixed const &second) {
 
 
 
+Fixed	Fixed::operator++() {
+	this->_value++;
+	return (*this);
+}
+
+Fixed	Fixed::operator--() {
+	this->_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
+	Fixed	tmp = *this;
+	++this->_value;
+	return (tmp);
+}
+
+Fixed	Fixed::operator--(int) {
+	Fixed	tmp = *this;
+	--this->_value;
+	return (tmp);
+}
+
+
+
 int		Fixed::getRawBits(void) const {
 	return (this->_value);
 }

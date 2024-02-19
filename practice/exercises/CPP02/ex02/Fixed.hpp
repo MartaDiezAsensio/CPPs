@@ -31,6 +31,12 @@ class	Fixed {
 		float	operator*(Fixed fixed) const;
 		float	operator/(Fixed fixed) const;
 
+		Fixed	operator++();
+		Fixed	operator--();
+
+		Fixed	operator++(int);
+		Fixed	operator--(int);
+
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		static Fixed	&min(Fixed &first, Fixed &second);
