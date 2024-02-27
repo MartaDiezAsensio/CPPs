@@ -6,14 +6,13 @@
 
 class Fixed {
 	private:
-		int					_fix_value;
-		static const int	_frac_bits;
+		int					_value;
+		static const int	_frac;
 
 	public:
 		Fixed();
-		Fixed(const Fixed &copy);
-
 		~Fixed();
+		Fixed(Fixed const &copy);
 
 		Fixed	&operator=(const Fixed &other);
 

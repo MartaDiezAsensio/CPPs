@@ -1,8 +1,8 @@
 #include "Fixed.hpp"
 
-const int	Fixed::_frac_bits = 8;
+const int	Fixed::_frac = 8;
 
-Fixed::Fixed() : _fix_value(0) {
+Fixed::Fixed() : _value(0) {
 	std::cout << "Contructor called" << std::endl;
 }
 
@@ -18,17 +18,17 @@ Fixed::~Fixed() {
 Fixed	&Fixed::operator=(const Fixed &other) {
 	std::cout << "Fixed Assigntion operator called" << std::endl;
 	if (this != &other) {
-		this->_fix_value = other.getRawBits();
+		this->_value = other.getRawBits();
 	}
 	return (*this);
 }
 
 int		Fixed::getRawBits( void ) const {
 	std::cout << "getter function called" << std::endl;
-	return (this->_frac_bits);
+	return (this->_value);
 }
 
 void	Fixed::setRawBits( int const raw) {
 	std::cout << "setter function called" << std::endl;
-	this->_fix_value = raw;
+	this->_value = raw;
 }
