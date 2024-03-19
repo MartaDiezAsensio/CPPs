@@ -26,7 +26,7 @@ class	Fixed {
 		bool	operator==(Fixed fixed) const;
 		bool	operator!=(Fixed fixed) const;
 
-		float	operator+(Fixed fixed) const;
+		float	operator+(const Fixed& fixed) const;
 		float	operator-(Fixed fixed) const;
 		float	operator*(Fixed fixed) const;
 		float	operator/(Fixed fixed) const;

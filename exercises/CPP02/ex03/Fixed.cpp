@@ -23,15 +23,11 @@ Fixed::Fixed(Fixed const &copy) {
 	*this = copy;
 }
 
-
-
 Fixed	&Fixed::operator=(Fixed const &copy) {
 	std::cout << "Assignment operator called" << std::endl;
 	this->_value = copy.getRawBits();
 	return (*this);
 }
-
-
 
 bool	Fixed::operator>(Fixed fixed) const {
 	return (this->getRawBits() > fixed.getRawBits());
@@ -57,9 +53,7 @@ bool	Fixed::operator!=(Fixed fixed) const {
 	return (this->getRawBits() != fixed.getRawBits());
 }
 
-
-
-float	Fixed::operator+(Fixed fixed) const {
+float	Fixed::operator+(const Fixed& fixed) const {
 	return (this->toFloat() + fixed.toFloat());
 }
 
@@ -111,8 +105,6 @@ const Fixed	&Fixed::max(Fixed const &first, Fixed const &second) {
 		return (second);
 }
 
-
-
 Fixed	Fixed::operator++() {
 	this->_value++;
 	return (*this);
@@ -135,8 +127,6 @@ Fixed	Fixed::operator--(int) {
 	return (tmp);
 }
 
-
-
 int		Fixed::getRawBits(void) const {
 	return (this->_value);
 }
@@ -144,8 +134,6 @@ int		Fixed::getRawBits(void) const {
 void	Fixed::setRawBits(int const raw) {
 	this->_value = raw;
 }
-
-
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr) {
 	return (str << fixed_nbr.toFloat());
