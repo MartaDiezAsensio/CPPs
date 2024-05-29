@@ -14,22 +14,22 @@ class	Fixed {
 		Fixed(void);
 		Fixed(const int value);
 		Fixed(const float value);
-		~Fixed(void);
 		Fixed(Fixed const &copy);
+		~Fixed(void);
 
 		Fixed	&operator=(Fixed const &copy);
 
-		bool	operator>(Fixed fixed) const;
-		bool	operator<(Fixed fixed) const;
-		bool	operator>=(Fixed fixed) const;
-		bool	operator<=(Fixed fixed) const;
-		bool	operator==(Fixed fixed) const;
-		bool	operator!=(Fixed fixed) const;
+		bool	operator>(const Fixed &fixed) const;
+		bool	operator<(const Fixed &fixed) const;
+		bool	operator>=(const Fixed &fixed) const;
+		bool	operator<=(const Fixed &fixed) const;
+		bool	operator==(const Fixed &fixed) const;
+		bool	operator!=(const Fixed &fixed) const;
 
-		float	operator+(const Fixed& fixed) const;
-		float	operator-(Fixed fixed) const;
-		float	operator*(Fixed fixed) const;
-		float	operator/(Fixed fixed) const;
+		float	operator+(const Fixed &fixed) const;
+		float	operator-(const Fixed &fixed) const;
+		float	operator*(const Fixed &fixed) const;
+		float	operator/(const Fixed &fixed) const;
 
 		Fixed	operator++();
 		Fixed	operator--();
@@ -39,6 +39,7 @@ class	Fixed {
 
 		float	toFloat(void) const;
 		int		toInt(void) const;
+
 		static Fixed	&min(Fixed &first, Fixed &second);
 		static const Fixed	&min(Fixed const &first, Fixed const &second);
 		static Fixed	&max(Fixed &first, Fixed &second);

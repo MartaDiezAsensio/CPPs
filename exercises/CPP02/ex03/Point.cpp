@@ -26,35 +26,11 @@ const Fixed&	Point::getY() const {
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point) {
-	bool	ret = false;
+	bool	sign[3];
 
-	if ((a.getY() == b.getY() && a.getY() == point.getY()) || (a.getY() == c.getY() && a.getY() == point.getY()) || \
-		(b.getY() == c.getY() && b.getY() == point.getY()) || (b.getX() == c.getX() && b.getX() == point.getX()) || \
-		(a.getX() == b.getX() && a.getX() == point.getX()) || (a.getX() == c.getX() && a.getX() == point.getX()))
-			return (false);
-	if (a.getY() > point.getY() != b.getY() > point.getY()) {
-		if ((a.getX() - b.getX()) * (point.getY() - b.getY())
-		 / (a.getY() - b.getY()) + b.getX() > point.getX())
-		 	ret = true;
-	}
-	if (a.getY() > point.getY() != c.getY() > point.getY()) {
-		if ((a.getX() - c.getX()) * (point.getY() - c.getY())
-		/ (a.getY() - c.getY()) + c.getX() > point.getX()) {
-			if (ret)
-				ret = false;
-			else
-				ret = true;
-		}
-	}
-	if (b.getY() > point.getY() != c.getY() > point.getY()) {
-		if ((b.getX() - c.getX()) * (point.getY() - c.getY())
-		/ (b.getY() - c.getY()) + c.getX() > point.getX()) {
-			if (ret)
-				ret = false;
-			else
-				ret = true;
-		}
-	}
+	sign[0] = ((a.getX() - point.getX()) * (b.getY() - a.getY()) - (b.getX() - a.getX()) * (a.getY() - point.getY())) > 0;
+	sign[1] = ((b.getX() - point.getX()) * (c.getY() - b.getY()) - (c.getX() - b.getX()) * (b.getY() - point.getY())) > 0;
+	sign[2] = ((c.getX() - point.getX()) * (a.getY() - c.getY()) - (a.getX() - c.getX()) * (c.getY() - point.getY())) > 0;
 
-	return (ret);
+	return sign[0] == sign[1] && sign[1] == sign[2];
 }
