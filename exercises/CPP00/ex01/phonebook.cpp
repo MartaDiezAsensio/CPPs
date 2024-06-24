@@ -94,7 +94,35 @@ void	PhoneBook::add_contact()
 	std::cin.clear();
 }
 
+int		PhoneBook::customAtoi(const std::string &str)
+{
+	int		i = 0;
+	bool	isNegative = false;
+    int		n = str.size();
+	int		result = 0;
 
+    while (i < n && isspace(str[i])) {
+        i++;
+    }
+    if (i < n && (str[i] == '-' || str[i] == '+')) {
+        isNegative = (str[i] == '-');
+        i++;
+    }
+    while (i < n && isdigit(str[i])) {
+        int digit = str[i] - '0';
+        if (result > (INT_MAX - digit) / 10) {
+            return isNegative ? INT_MIN : INT_MAX;
+        }
+        result = result * 10 + digit;
+        i++;
+    }
+
+    if (isNegative) {
+		return (-result);
+	} else {
+		return (result);
+	}
+}
 
 void	PhoneBook::search_contact()
 {
@@ -106,7 +134,7 @@ void	PhoneBook::search_contact()
 	std::cout << "> ";
 	std::cin >> str;
 
-	index_search = atoi(str.c_str());
+	index_search = PhoneBook::customAtoi(str.c_str());
 	if (std::cin.fail() || (index_search < 0) || (index_search > 7) || str.length() > 1)
 		std::cout << "Invalid input" << std::endl;
 	else

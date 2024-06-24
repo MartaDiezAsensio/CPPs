@@ -7,6 +7,10 @@
 #include <iomanip>
 #include "contact.hpp"
 
+//For atoi
+#include <climits>
+#include <cctype>
+
 class PhoneBook
 {
 	private:
@@ -21,6 +25,8 @@ class PhoneBook
 		void	search_contact();
 		void	display_contact();
 		void	help_menu();
+
+		int		customAtoi(const std::string &str);
 };
 
 #endif
