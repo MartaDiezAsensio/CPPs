@@ -22,6 +22,7 @@ Cat &Cat::operator=(const Cat &other)
 {
 	_type = other._type;
 	std::cout << "Cat copy assignment constructor called\n" << std::endl;
+	return *this;
 }
 
 Cat::~Cat()

@@ -19,7 +19,7 @@ Animal &Animal::operator=(const Animal &other)
 {
 	_type = other._type;
 	std::cout << "Animal copy assignment contructor called\n" << std::endl;
-
+	return *this;
 }
 
 Animal::~Animal()
@@ -27,7 +27,7 @@ Animal::~Animal()
 	std::cout << "Animal cdestructor called\n" << std::endl;
 }
 
-void	Animal::makesound() const
+void	Animal::makeSound() const
 {
 	std::cout << "Animal could make many different sounds.\n" << std::endl;
 }

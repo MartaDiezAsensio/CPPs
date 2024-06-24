@@ -12,5 +12,5 @@ int main ( void )
 	ash.guardGate();
 
 
-	return (EXIT_SUCCESS);
+	return (0);
 }

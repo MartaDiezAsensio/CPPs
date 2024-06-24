@@ -12,5 +12,5 @@ int main ( void )
 	ash.highFive();
 
 
-	return (EXIT_SUCCESS);
+	return (0);
 }
