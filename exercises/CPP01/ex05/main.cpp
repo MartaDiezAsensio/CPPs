@@ -29,11 +29,11 @@ int	main( void ) {
 		std::cin >> input;
 		if (std::cin.eof() == true) {
 			std::cerr << "^D" << std::endl;
-			exit(EXIT_FAILURE);
+			return(1);
 		}
 		harl.complain(input);
 		std::cout << std::endl;
 	}
 
-	return (EXIT_SUCCESS);
+	return (0);
 }

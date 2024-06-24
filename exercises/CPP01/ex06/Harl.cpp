@@ -25,29 +25,17 @@ void	Harl::error( void ) {
 std::cout << "[ERROR]\nThis is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-void	Harl::complain( std:: string level) {
-	void	(Harl::*functionPTRS[])( void ) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+void Harl::complain(std::string level) {
+  void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning,
+                                  &Harl::error};
+  std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-	std::string	complains[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-
-	int i;
-
-	for (i = 0; i < 4; i++) {
-		if (complains[i] == level)
-			break ;
-	}
-	switch (i) {
-		case (0):
-			(this->*functionPTRS[0])();
-		case (1):
-			(this->*functionPTRS[1])();
-		case (2):
-			(this->*functionPTRS[2])();
-		case (3):
-			(this->*functionPTRS[3])();
-			break;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-			break;
-	}
+  int i;
+  for (i = 0; i < 4; i++) {
+    if (level == levels[i]) {
+      (this->*functions[i])();
+      break;
+    }
+  }
+  if (i == 4) std::cout << "No matching level!" << std::endl;
 }

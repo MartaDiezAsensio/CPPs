@@ -8,5 +8,5 @@ int	main( int argc, char **argv ) {
 	else
 		harl.complain("string");
 
-	return (EXIT_SUCCESS);
+	return (0);
 }
