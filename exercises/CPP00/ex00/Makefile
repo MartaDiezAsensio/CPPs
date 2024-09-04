@@ -1,6 +1,6 @@
-NAME = phonebook
+NAME = megaphone
 
-SRC		=	contact.cpp phonebook.cpp
+SRC		=	megaphone.cpp
 
 CC 		= c++
 

@@ -1,29 +1,26 @@
-SRC = Account.cpp tests.cpp
-OBJ = $(SRC:.cpp=.o)
-CC = g++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+NAME = Account
 
-UNAME = $(shell uname -s)
+SRC		=	Account.cpp test.cpp
 
-ifeq ($(UNAME), Linux)
-CPPFLAGS = -Wall -Wextra -pedantic
-$(warning Linux detected! Disabling -Werror and -std=c++98...)
-endif
+CC 		= c++
 
-NAME = bank
+FLAGS	= -std=c++98 -Wall -Wextra -Werror 
 
-all: $(NAME)
+OBJS 	= $(SRC:.c=.o)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+
+all: $(NAME) $(OBJS)
+
+%.o: %.c
+		$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	rm -rf $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re
