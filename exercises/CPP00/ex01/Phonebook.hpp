@@ -5,7 +5,7 @@
 
 #include <iostream>
 #include <iomanip>
-#include "contact.hpp"
+#include "Contact.hpp"
 
 //For atoi
 #include <climits>

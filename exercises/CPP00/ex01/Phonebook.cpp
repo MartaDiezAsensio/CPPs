@@ -6,6 +6,7 @@ PhoneBook::PhoneBook()
 	this->_index = 0;
 	std::cout << "Phonebook constructor called." << std::endl;
 }
+
 PhoneBook::~PhoneBook()
 {
 	std::cout << "Phonebook destructor called." << std::endl;
@@ -139,9 +140,9 @@ void	PhoneBook::search_contact()
 		std::cout << "Invalid input" << std::endl;
 	else
 	{
-		std::cout << "First nam: " << _contacts[index_search].get_first_name() << std::endl;
+		std::cout << "First name: " << _contacts[index_search].get_first_name() << std::endl;
 		std::cout << "Last name: " << _contacts[index_search].get_last_name() << std::endl;
-		std::cout << "nickename: " << _contacts[index_search].get_nick() << std::endl;
+		std::cout << "Nickename: " << _contacts[index_search].get_nick() << std::endl;
 		std::cout << "Phone number: " << _contacts[index_search].get_phone_num() << std::endl;
 		std::cout << "Darkest secret: " << _contacts[index_search].get_darkest_secret() << std::endl;
 	}
@@ -151,6 +152,8 @@ void	PhoneBook::search_contact()
 
 void	PhoneBook::display_contact()
 {
+	std::string		str;
+
 	std::cout	<< "|--------------Contact Display--------------|\n"
 				<< "|-------------------------------------------|\n"
 				<< "|     Index|First Name| Last Name|  Nickname|\n"
@@ -159,16 +162,28 @@ void	PhoneBook::display_contact()
 	for (int i = 0; i < 8; i++)
 	{
 		std::cout << '|' << std::setw(10) << i;
-		std::cout << '|' << std::setw(10) << _contacts[i].get_first_name();
-		std::cout << '|' << std::setw(10) << _contacts[i].get_last_name();
-		std::cout << '|' << std::setw(10) << _contacts[i].get_nick();
+
+		str = _contacts[i].get_first_name();
+		if (str.length() > 10)
+			str = str.substr(0, 9) = ".";
+		std::cout << '|' << std::setw(10) << str;
+
+		str = _contacts[i].get_last_name();
+		if (str.length() > 10)
+			str = str.substr(0, 9) = ".";
+		std::cout << '|' << std::setw(10) << std::right << str;
+
+		str = _contacts[i].get_nick();
+		if (str.length() > 10)
+			str = str.substr(0, 9) = ".";
+		std::cout << '|' << std::setw(10) << str;
 		std::cout << '|' << std::endl;
 	}
 }
 
 void	PhoneBook::help_menu()
 {
-	std::cout << "|---------Welcome to the awesome Phonebook ☎📔---------|" << std::endl;
+	std::cout << "|-----------------------Phonebook-----------------------|" << std::endl;
 	std::cout << "|                        1-ADD                          |" << std::endl;
 	std::cout << "|                        2-SEARCH                       |" << std::endl;
 	std::cout << "|                        3-EXIT                         |" << std::endl;

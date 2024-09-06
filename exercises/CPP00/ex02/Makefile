@@ -1,26 +1,22 @@
+SRC = Account.cpp tests.cpp
+OBJ = $(SRC:.cpp=.o)
+CC = c++
+RM = rm -f
+CPPFLAGS = -Wall -Wextra -Werror -std=c++11
+
 NAME = Account
 
-SRC		=	Account.cpp test.cpp
+all: $(NAME)
 
-CC 		= c++
-
-FLAGS	= -std=c++98 -Wall -Wextra -Werror 
-
-OBJS 	= $(SRC:.c=.o)
-
-$(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
-
-all: $(NAME) $(OBJS)
-
-%.o: %.c
-		$(CC) $(FLAGS) -c $< -o $@
+$(NAME): $(OBJ)
+	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
-	rm -rf $(NAME)
+	$(RM) $(OBJ)
 
 fclean: clean
+	$(RM) $(NAME)
 
-re: fclean all
+re: fclean $(NAME)
 
 .PHONY: all clean fclean re
