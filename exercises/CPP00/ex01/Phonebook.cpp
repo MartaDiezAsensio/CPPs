@@ -165,17 +165,17 @@ void	PhoneBook::display_contact()
 
 		str = _contacts[i].get_first_name();
 		if (str.length() > 10)
-			str = str.substr(0, 9) = ".";
+			str = str.substr(0, 9) + ".";
 		std::cout << '|' << std::setw(10) << str;
 
 		str = _contacts[i].get_last_name();
 		if (str.length() > 10)
-			str = str.substr(0, 9) = ".";
+			str = str.substr(0, 9) + ".";
 		std::cout << '|' << std::setw(10) << std::right << str;
 
 		str = _contacts[i].get_nick();
 		if (str.length() > 10)
-			str = str.substr(0, 9) = ".";
+			str = str.substr(0, 9) + ".";
 		std::cout << '|' << std::setw(10) << str;
 		std::cout << '|' << std::endl;
 	}
