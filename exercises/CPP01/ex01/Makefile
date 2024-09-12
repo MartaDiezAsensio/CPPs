@@ -3,11 +3,11 @@ SRC = main.cpp Zombie.cpp zombieHorde.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 NAME = zombie
 

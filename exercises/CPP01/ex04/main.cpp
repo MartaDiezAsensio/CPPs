@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <string.h>
 #include <fstream>
@@ -15,6 +14,7 @@ int	replace(char **argv, std::string str)
 
 	for (int i = 0; i < (int)str.size() ; i++) {
 		pos = str.find(argv[2], i);
+
 		if (pos != -1 && pos == i) {
 			outfile << argv[3];
 			i += std::string(argv[2]).size() - 1;
@@ -23,6 +23,7 @@ int	replace(char **argv, std::string str)
 			outfile << str[i];
 	}
 	outfile.close();
+
 	return (0);
 }
 
@@ -41,6 +42,7 @@ int	main ( int argc, char **argv)
 	}
 
 	infile.open(argv[1]);
+
 	if (infile.fail())
 	{
 		std::cout << "Error: " << argv[1] << ":" << " no such file or directory" << std::endl;

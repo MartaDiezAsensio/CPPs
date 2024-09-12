@@ -5,6 +5,7 @@ Zombie::Zombie( std::string const &name ) : _name(name) {
 }
 
 Zombie::~Zombie( void ) {
+	std::cout << "\n" << std::endl;
 	std::cout << "Zombie \"" << this->_name;
 	std::cout << "\" has been destroyed." << std::endl;
 	return ;

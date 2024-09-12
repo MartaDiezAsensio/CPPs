@@ -7,7 +7,7 @@ Zombie::Zombie( std::string name ) {
 
 
 Zombie::Zombie( void ) {
-	this->_name = "(null)";
+	this->_name = "";
 	std::cout << "Zombie " << this->_name << " created\n" << std::endl;
 }
 

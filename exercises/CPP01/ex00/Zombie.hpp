@@ -1,4 +1,3 @@
-
 #ifndef ZOMBIE_H
 #define ZOMBIE_H
 
@@ -8,6 +7,7 @@
 class Zombie {
 	private:
 		std::string	_name;
+
 	public:
 		Zombie( std::string const &name );
 		~Zombie( void );

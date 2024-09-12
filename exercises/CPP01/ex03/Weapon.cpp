@@ -1,13 +1,12 @@
-
 #include "Weapon.hpp"
 
 Weapon::Weapon( std::string type ) {
 	this->_type = type;
-	std::cout << "Created" << std::endl;
+	std::cout << "Weapon created" << std::endl;
 }
 
 Weapon::~Weapon( void ) {
-	std::cout << "Deleted" << std::endl;
+	std::cout << "Weapon deleted" << std::endl;
 }
 
 std::string	Weapon::getType() {

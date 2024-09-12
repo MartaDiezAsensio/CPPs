@@ -2,7 +2,7 @@ SRC = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = g++
+CC = c++
 
 RM = rm -f
 
