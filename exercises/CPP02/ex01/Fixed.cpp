@@ -24,14 +24,11 @@ Fixed::Fixed(Fixed const &copy) {
 	*this = copy;
 }
 
-
-
 Fixed	&Fixed::operator=(Fixed const &copy) {
 	std::cout << "Assignment operator called" << std::endl;
 	this->_value = copy.getRawBits();
 	return (*this);
 }
-
 
 int		Fixed::getRawBits(void) const {
 	return (this->_value);

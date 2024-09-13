@@ -8,13 +8,17 @@ class	Fixed {
 	private:
 		int					_value;
 		static const int	_frac;
+
 	public:
 		Fixed(void);
 		Fixed(const int value);
 		Fixed(const float value);
 		~Fixed(void);
+
 		Fixed(Fixed const &copy);
+
 		Fixed	&operator=(Fixed const &copy);
+
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
