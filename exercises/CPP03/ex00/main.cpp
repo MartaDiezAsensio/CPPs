@@ -1,10 +1,9 @@
-
 #include "ClapTrap.hpp"
 
 int main ( void )
 {
-	ClapTrap clap("Ash");
-	clap.attack("Staff");
+	ClapTrap clap("Tommy");
+	clap.attack("Jerry");
 
 	return (0);
 }

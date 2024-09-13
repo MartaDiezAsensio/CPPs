@@ -37,15 +37,16 @@ class	Fixed {
 		Fixed	operator++(int);
 		Fixed	operator--(int);
 
-		float	toFloat(void) const;
-		int		toInt(void) const;
-		static Fixed	&min(Fixed &first, Fixed &second);
+		float				toFloat(void) const;
+		int					toInt(void) const;
+
+		static Fixed		&min(Fixed &first, Fixed &second);
 		static const Fixed	&min(Fixed const &first, Fixed const &second);
-		static Fixed	&max(Fixed &first, Fixed &second);
+		static Fixed		&max(Fixed &first, Fixed &second);
 		static const Fixed	&max(Fixed const &first, Fixed const &second);
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
+		int					getRawBits(void) const;
+		void				setRawBits(int const raw);
 };
 
 std::ostream	&operator<<(std::ostream &str, Fixed const &fixed_nbr);

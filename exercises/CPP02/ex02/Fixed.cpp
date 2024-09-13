@@ -6,11 +6,13 @@ Fixed::Fixed(void) : _value(0) {
 	std::cout << "Fixed object created with default constructor" << std::endl;
 }
 
-Fixed::Fixed(const int value) : _value(value) {
+Fixed::Fixed(const int value) {
+	this->_value = value << this->_frac;
 	std::cout << "Fixed object created with int constructor" << std::endl;
 }
 
-Fixed::Fixed(const float value) : _value(value) {
+Fixed::Fixed(const float value) {
+	this->_value = roundf(value * (1 << this->_frac));
 	std::cout << "Fixed object created with float constructor" << std::endl;
 }
 
@@ -75,12 +77,12 @@ float	Fixed::operator/(Fixed fixed) const {
 	return (this->toFloat() / fixed.toFloat());
 }
 
-int		Fixed::toInt(void) const {
-	return (this->_value >> this->_frac);
+float	Fixed::toFloat(void) const {
+	return (this->_value / (float)(1 << this->_frac));
 }
 
-float	Fixed::toFloat(void) const {
-	return (this->_value / (1 << this->_frac));
+int		Fixed::toInt(void) const {
+	return (this->_value >> this->_frac);
 }
 
 Fixed	&Fixed::min(Fixed &first, Fixed &second) {
