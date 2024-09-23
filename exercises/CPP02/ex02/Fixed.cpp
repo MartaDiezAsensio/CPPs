@@ -59,8 +59,6 @@ bool	Fixed::operator!=(Fixed fixed) const {
 	return (this->getRawBits() != fixed.getRawBits());
 }
 
-
-
 float	Fixed::operator+(Fixed fixed) const {
 	return (this->toFloat() + fixed.toFloat());
 }
